@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function deepEqual(a, b){
+                if(typeof(a)=="object" && typeof(b)=="object"){
+                    var firstobject=Object.keys(a);
+                        var secondobject=Object.keys(b);
+                    if(firstobject.length == secondobject.length){
+                        
+                        for(var i=0;i<firstobject.length;i++ ){
+                            var firstKey=firstobject[i];
+                            var secondKey=secondobject[i];
+                            deepEqual(a[firstKey],b[secondKey]);
+                        }
+                    }
+                    else{
+                        console.log(false)
+                    }
+                }
+                else if(typeof(a) == typeof(b)){
+                    if(a == b){
+                        console.log(true)
+                    }
+                    else{
+                        console.log(false)
+                    }
+                }
+                else{
+                    console.log(false)
+                }
+            }
+
+            var n = {
+                id:1010,
+                name:"Nikhil"
+            }
+            var m = {
+                
+                name:"Nikhil"
+            }
+
+            deepEqual(n,m)
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
